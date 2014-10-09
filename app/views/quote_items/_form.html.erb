@@ -1,0 +1,33 @@
+<%= form_for(@quote_item) do |f| %>
+  <% if @quote_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quote_item.errors.count, "error") %> prohibited this quote_item from being saved:</h2>
+
+      <ul>
+      <% @quote_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :quote_id %><br>
+    <%= f.number_field :quote_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.number_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

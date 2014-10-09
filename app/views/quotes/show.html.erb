@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @quote.client.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @quote.status %>
+</p>
+
+<%= link_to 'Edit', edit_client_quote_path(@client, @quote) %> |
+<%= link_to 'Back', client_quotes_path %>

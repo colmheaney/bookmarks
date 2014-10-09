@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
+<br />
+<%= link_to 'Show Contacts', client_contacts_path(@client) %>
+<br />
+<%= link_to 'Show Bills', client_bills_path(@client) %>
+<br />
+<%= link_to 'Show Quotes', client_quotes_path(@client) %>

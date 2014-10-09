@@ -1,0 +1,27 @@
+<h1>Listing quotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td><%= quote.client_id %></td>
+        <td><%= quote.status %></td>
+        <td><%= link_to 'Show', client_quote_path(@client, quote)%></td>
+        <td><%= link_to 'Edit', edit_client_quote_path(@client, quote) %></td>
+        <td><%= link_to 'Destroy', client_quote_path(@client, quote), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quote', new_client_quote_path %>
